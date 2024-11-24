@@ -22,5 +22,27 @@ body{
 }
 
 button{
-    bor
+    border: none;
+    outline: none;
+    cursor: pointer;
 }
+
+#start-button, 
+#restart{
+    font-size: 1.33em;
+    padding: 0.5em 1.8em;
+    border-radius: 0.2em;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
+}
+
+#restart{
+    margin-top: 0.9em;
+}
+
+#display-container{
+    background-color: #fff;
+    padding: 3.1em 1.8em;
+    width: 80%;
+    max-width: 37.5em;
+}
+
