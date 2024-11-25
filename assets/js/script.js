@@ -153,5 +153,14 @@ function quizCreator() {
 
         countOfQuestion.innerHTML = 1 + " of " + quizArray.length + " Question";
 
+        let question_DIV = document.createElement("p");
+        question_DIV.classList.add("question");
+        question_DIV.innerHTML = i.question;
+        div.appendChild(question_DIV);
+
+        div.innerHTML +=
+        <button class="option-div" onclick="checker(this)">
+            ${i.options[0]}
+        </button>
     }
 }
