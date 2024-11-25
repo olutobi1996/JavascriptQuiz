@@ -142,3 +142,16 @@ const quizDisplay = (questionCount) =>{
     });
     quizCards[questionCount].classList.remove("hide");
 };
+
+function quizCreator() {
+    quizArray.sort(() => Math.random() - 0.5);
+
+    for (let i of quizArray){
+        i.options.sort(() => Math.random() - 0.5);
+        let div = document.createElement("div");
+        div.classList.add("container-mid", "hide");
+
+        countOfQuestion.innerHTML = 1 + " of " + quizArray.length + " Question";
+
+    }
+}
