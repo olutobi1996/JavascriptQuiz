@@ -158,9 +158,41 @@ function quizCreator() {
         question_DIV.innerHTML = i.question;
         div.appendChild(question_DIV);
 
-        div.innerHTML +=
+        div.innerHTML += `
         <button class="option-div" onclick="checker(this)">
             ${i.options[0]}
         </button>
+        <button class="option-div" onclick="checker(this)">
+            ${i.options[1]}
+        </button>
+        <button class="option-div" onclick="checker(this)">
+            ${i.options[2]}
+        </button>
+        <button class="option-div" onclick="checker(this)">
+            ${i.options[3]}
+        </button>
+        `;
+
+        quizContainer.appendChild(div);
+    }
+}
+
+function checker(userOption){
+    let userSolution = userOption.innerText;
+    let question = document.getElementsByClassName
+    ("container-mid")[questionCount];
+    let options = question.querySelectorAll(".option-div");
+
+    if(userSolution === quizArray[questionCount].correct){
+        userOption.classList.add("correct");
+        scoreCount++;
+    } else {
+        userOption.classList.add("incorrect");
+
+        options.forEach((Element) => {
+            if ((Element.innerText = quizArray[questionCount].correct)){
+                Element.classList.add("correct");
+            }
+        });
     }
 }
