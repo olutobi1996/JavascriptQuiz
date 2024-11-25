@@ -115,7 +115,7 @@ const quizArray = [
         " of " + quizArray.length + "Question";
 
         quizDisplay(questionCount);
-        count = 11;
+        count = 7;
         clearInterval(countdown);
         timerDisplay();
     }
@@ -207,7 +207,7 @@ function initial() {
     questionCount = 0;
     scoreCount = 0;
     scoreCount = 0;
-    count = 11;
+    count = 7;
     clearInterval(countdown);
     timerDisplay();
     quizCreator();
