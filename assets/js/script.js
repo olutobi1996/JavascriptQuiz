@@ -119,4 +119,26 @@ const quizArray = [
         clearInterval(countdown);
         timerDisplay();
     }
-  }))
+  })
+);
+
+
+const timerDisplay = () => {
+    countdown = setInterval(() => {
+        count--;
+        timeLeft.innerHTML = `${count}s`;
+        if (count == 0) {
+            clearInterval(countdown);
+            displayNext();
+        }
+    }, 1000);
+};
+
+const quizDisplay = (questionCount) =>{
+    let quizCards = document.querySelector(".container-mid");
+
+    quizCards.forEach((card)=>{
+        card.classList.add("hide");
+    });
+    quizCards[questionCount].classList.remove("hide");
+};
