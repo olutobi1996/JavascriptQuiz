@@ -202,3 +202,25 @@ function checker(userOption){
     });
 }
 
+function initial() {
+    quizContainer.innerHTML = "";
+    questionCount = 0;
+    scoreCount = 0;
+    scoreCount = 0;
+    count = 11;
+    clearInterval(countdown);
+    timerDisplay();
+    quizCreator();
+    quizDisplay(questionCount);
+}
+
+startButton.addEventListener("click", () => {
+    startScreen.classList.add("hide");
+    displayContainer.classList.remove("hide");
+    initial();
+});
+
+window.onload = () => {
+    startScreen.classList.remove("hide");
+    displayContainer.classList.add("hide");
+};
