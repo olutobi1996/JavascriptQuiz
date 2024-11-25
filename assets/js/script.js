@@ -183,7 +183,7 @@ function checker(userOption){
     ("container-mid")[questionCount];
     let options = question.querySelectorAll(".option-div");
 
-    if(userSolution === quizArray[questionCount].correct){
+    if(userSolution === quizArray[questionCount].correct) {
         userOption.classList.add("correct");
         scoreCount++;
     } else {
@@ -195,4 +195,10 @@ function checker(userOption){
             }
         });
     }
+
+    clearInterval(countdown);
+    options.forEach((Element) => {
+        Element.disabled = true;
+    });
 }
+
