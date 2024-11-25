@@ -94,3 +94,29 @@ const quizArray = [
         ],
     },
   ];
+
+  restart.addEventListener("click", () => {
+    initial();
+    displayContainer.classList.remove("hide");
+    scoreContainer.classList.add("hide");
+  });
+
+  nextBtn.addEventListener("click", (displayNext = () =>{
+    questionCount += 1;
+
+    if(questionCount == quizArray.length){
+        displayContainer.classList.add("hide");
+        scoreContainer.classList.remove("hide");
+        userScore.innerHTML = "Your Score Is " +
+        scoreCount + " out of " + questionCount;
+    }
+    else{
+        countOfQuestion.innerHTML = questionCount + 1 +
+        " of " + quizArray.length + "Question";
+
+        quizDisplay(questionCount);
+        count = 11;
+        clearInterval(countdown);
+        timerDisplay();
+    }
+  }))
