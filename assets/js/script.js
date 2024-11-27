@@ -13,6 +13,8 @@ let scoreCount = 0;
 let count = 11;
 let countdown;
 
+const audio = new Audio("https://www.fesliyanstudios.com/play-mp3/387");
+const buttons = document.querySelectorAll("button");
 
 /* These are the const Quiz Questions
  will will remain the same throughout,
@@ -114,7 +116,7 @@ const quizArray = [
         countOfQuestion.innerHTML = questionCount + 1 +
         " of " + quizArray.length + "Question";
 
-        quizDisplay(questionCount);
+        displayNext(questionCount);
         count = 7;
         clearInterval(countdown);
         timerDisplay();
@@ -135,7 +137,7 @@ const timerDisplay = () => {
 };
 
 const quizDisplay = (questionCount) =>{
-    let quizCards = document.querySelector(".container-mid");
+    let quizCards = document.querySelector(".container");
 
     quizCards.forEach((card)=>{
         card.classList.add("hide");
@@ -147,7 +149,7 @@ function quizCreator() {
     quizArray.sort(() => Math.random() - 0.5);
 
     for (let i of quizArray){
-        i.options.sort(() => Math.random() - 0.5);
+        i.answers.sort(() => Math.random() - 0.5);
         let div = document.createElement("div");
         div.classList.add("container-mid", "hide");
 
@@ -160,16 +162,16 @@ function quizCreator() {
 
         div.innerHTML += `
         <button class="option-div" onclick="checker(this)">
-            ${i.options[0]}
+            ${i.answers.sort[0]}
         </button>
         <button class="option-div" onclick="checker(this)">
-            ${i.options[1]}
+            ${i.answers.sort[1]}
         </button>
         <button class="option-div" onclick="checker(this)">
-            ${i.options[2]}
+            ${i.answers.sort[2]}
         </button>
         <button class="option-div" onclick="checker(this)">
-            ${i.options[3]}
+            ${i.answers.sort[3]}
         </button>
         `;
 
@@ -220,7 +222,3 @@ startButton.addEventListener("click", () => {
     initial();
 });
 
-window.onload = () => {
-    startScreen.classList.remove("hide");
-    displayContainer.classList.add("hide");
-};
